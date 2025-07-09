@@ -6,17 +6,7 @@ import matplotlib.colors as colors
 
 csv_file = 'data/position.csv'
 
-try:
-    data = pd.read_csv(csv_file)
-except FileNotFoundError:
-    print(f"Error: The file '{csv_file}' was not found.")
-    exit(1)
-except pd.errors.EmptyDataError:
-    print(f"Error: The file '{csv_file}' is empty.")
-    exit(1)
-except pd.errors.ParserError:
-    print(f"Error: The file '{csv_file}' does not appear to be in CSV format.")
-    exit(1)
+data = pd.read_csv(csv_file)
 
 # Verify that necessary columns exist
 required_columns = {'Latitude', 'Longitude'}
